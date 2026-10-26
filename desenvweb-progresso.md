@@ -18,7 +18,9 @@ Objetivo: entregar uma página **infinitamente melhor** que a concorrente, com t
 - [x] **0. Preparar** — pasta criada, estado verificado. Falta confirmar briefing com o usuário.
 - [x] **Auditoria do concorrente** → `auditoria-concorrente.md` (observável/não-intrusiva). Achados: telefone e horário como placeholder "em validação"; prova social ignorada; copy genérica; sem CSP/anti-clickjacking; ACAO `*`. Base técnica (HSTS, SEO, mobile) OK.
 - [x] **1. Identidade visual** — **APROVADA** (26/10). Paleta #0A0A0A / #141414 / #F4F3EF / #FDB92E (AAA). Fontes **v2: Bricolage Grotesque (display) + Instrument Sans (corpo)** — troca o Nunito. Layout **v2: hero cinematográfico em tela cheia**, título ancorado embaixo. Conceito "chão de fábrica"; assinatura visual = faixa de advertência.
-- [~] **2. Movimento + construção** (skill `site-premium`) — **plano de movimento apresentado** no `design-plan.md` (seção "Identidade de movimento" + mapa de seções). **Aguardando aprovação antes de codar.** Gesto-assinatura "A barra carregada" (anilhas); apoio: faixa de advertência que avança, chapas de aço deslizando, raio que risca no load. Mundo industrial — diferente da "academia de bairro" já registrada.
+- [x] **2. Movimento + construção** (skill `site-premium`) — **v1 construída em `site/` (Next.js 16, estático) e no GitHub** (SamuelcCouto/Startlife, branch main). Hero cinematográfico + intro de halteres (1ª visita, em primeiro plano), prova (4,5/89), estrutura/comodidades, planos reais, localização c/ mapa, rodapé. Build OK, QA desktop+mobile OK. Stack: next/font (Bricolage+Instrument), Lenis, GSAP instalado. Preview/hero evoluiu em Artifact (v6) — intro a refinar.
+  - **Deploy Vercel:** importar o repo, **Root Directory = `site`**, framework Next.js (auto). Depois do 1º deploy, setar env `NEXT_PUBLIC_SITE_URL` com o domínio real (OG/canonical).
+  - **Onde trocar mídia/dados:** textos e preços em `site/lib/site.ts`; hero é CSS (sem foto ainda) — entra foto real depois. WhatsApp: 5562993434152.
 - [ ] **3. Mapa do código** (skill `cartographer`) após 1º commit.
 - [ ] **4. Ajustes finos.**
 - [ ] **5. Mobile** (skill `mobile`) antes de publicar.
@@ -31,5 +33,12 @@ Objetivo: entregar uma página **infinitamente melhor** que a concorrente, com t
 - CTA principal (default até confirmação): **Falar no WhatsApp (62) 99343-4152**.
 - Mídia (default): **stock premium** por enquanto; trocar por fotos reais quando o usuário enviar.
 
+## Próximos passos (refino na Vercel)
+- Afinar a intro de halteres (densidade/velocidade/duração) com o site no ar.
+- Trocar o fundo CSS do hero por foto real da unidade quando o cliente enviar.
+- Etapa 5 (skill `mobile`): auditoria nos 12 tamanhos reais com o site publicado.
+- Etapa 6 (`seguranca-web`): site é estático sem formulário/login (só links WhatsApp + mapa) → risco baixo; rodar checagem rápida + nota LGPD antes de divulgar.
+- Considerar OG image própria e sitemap/robots.
+
 ## Última atualização
-26/10/2026 — Next.js definido; plano de identidade apresentado (`design-plan.md` + preview). Aguardando aprovação para seguir à etapa 2 (site-premium: plano de movimento).
+26/10/2026 — v1 em Next.js construída, testada (desktop+mobile) e enviada ao GitHub (SamuelcCouto/Startlife). Pronta para deploy na Vercel (Root Directory = site). Refino da intro e mídia real ficam para a produção.
