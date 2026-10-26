@@ -1,0 +1,12 @@
+# deps / build
+node_modules/
+site/node_modules/
+site/.next/
+site/out/
+.vercel/
+
+# misc
+.DS_Store
+*.tsbuildinfo
+site/next-env.d.ts
+npm-debug.log*
